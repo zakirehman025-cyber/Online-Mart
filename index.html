@@ -1,4 +1,3 @@
-
 <h1>🛒 Online Mart Products</h1>
 
 <div id="productContainer" style="display:flex; flex-wrap:wrap; gap:10px;"></div>
@@ -29,3 +28,37 @@ for (let i = 0; i < 120; i++) {
         <img src="${images[item]}" width="150" height="150">
         <h3>${color} ${item}</h3>
         <p>Price: Rs ${500 + i * 10}</p>
+        <button>Add to Cart</button><h1>🛒 Online Mart Products</h1>
+
+<div id="productContainer" style="display:flex; flex-wrap:wrap; gap:10px;"></div>
+
+<script>
+const products = [
+  {name:"Red Shirt", img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300"},
+  {name:"Blue Shirt", img:"https://images.unsplash.com/photo-1520975958225-3f61d9f4a5d0?w=300"},
+  {name:"Shoes", img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300"},
+  {name:"Phone", img:"https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=300"},
+  {name:"Watch", img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300"},
+  {name:"Bag", img:"https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300"},
+  {name:"Toy", img:"https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=300"}
+];
+
+let container = document.getElementById("productContainer");
+
+for (let i = 0; i < 120; i++) {
+    let p = products[i % products.length];
+
+    container.innerHTML += `
+      <div style="border:1px solid #ccc; padding:10px; width:180px; text-align:center;">
+        <img src="${p.img}" width="150" height="150" style="object-fit:cover;">
+        <h3>${p.name}</h3>
+        <p>Price: Rs ${500 + i * 15}</p>
+        <button>Add to Cart</button>
+      </div>
+    `;
+}
+</script>
+      </div>
+    `;
+}
+</script>
