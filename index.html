@@ -20,4 +20,39 @@
     <h2>Watch</h2>
     <p>Price: Rs. 2,500</p>
     <button>Buy Now</button>
-</div>
+</div><h1>🛒 Online Mart Products</h1>
+
+<div id="productContainer" style="display:flex; flex-wrap:wrap; gap:10px;"></div>
+
+<script>
+// Categories
+const items = ["Shirt", "Pant", "Shoes", "Phone", "Toy", "Watch", "Bag", "Cap", "Laptop", "Headphones"];
+const colors = ["Red", "Blue", "Black", "White", "Green", "Yellow", "Brown", "Grey", "Pink", "Purple"];
+const priceBase = [500, 800, 1200, 1500, 2000, 2500, 3000, 3500, 4000, 5000];
+
+let products = [];
+
+// Generate 120+ products
+for (let i = 1; i <= 120; i++) {
+    let item = items[i % items.length];
+    let color = colors[i % colors.length];
+    let price = priceBase[i % priceBase.length];
+
+    products.push({
+        name: color + " " + item,
+        price: price + i
+    });
+}
+
+let container = document.getElementById("productContainer");
+
+products.forEach(p => {
+    container.innerHTML += `
+        <div style="border:1px solid #ccc; padding:10px; width:180px;">
+            <h3>${p.name}</h3>
+            <p>Price: Rs ${p.price}</p>
+            <button>Add to Cart</button>
+        </div>
+    `;
+});
+</script>
